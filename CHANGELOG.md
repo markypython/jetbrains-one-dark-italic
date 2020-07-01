@@ -1,5 +1,11 @@
 # Changelog
 
+#### 4.0.3-2019
+
+- Unfortunately v4.0.0 was released with 2019 as a supported build.
+However, that was not intended. This version only has what v3.3.6 has.
+To get v4.0.0 features, please upgrade your IDE.
+
 #### 3.3.6
 
 - Add support for 2020.2

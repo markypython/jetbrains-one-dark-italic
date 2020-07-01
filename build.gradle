@@ -10,12 +10,13 @@ repositories {
 }
 
 intellij {
-    version 'LATEST-EAP-SNAPSHOT'
+    version '2019.3.4'
     alternativeIdePath  project.hasProperty("idePath") ? project.findProperty("idePath") : ""
 }
 
 patchPluginXml {
     sinceBuild '191'
+    untilBuild '193.*'
 
     def changelogPath = "$projectDir/build/CHANGELOG.html"
     def readmePath = "$projectDir/build/README.html"
