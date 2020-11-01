@@ -4,6 +4,7 @@ import com.intellij.ide.plugins.PluginManagerCore.getPlugin
 import com.intellij.ide.plugins.PluginManagerCore.getPluginOrPlatformByClassName
 import com.intellij.notification.NotificationDisplayType
 import com.intellij.notification.NotificationGroup
+import com.intellij.notification.NotificationGroupManager
 import com.intellij.notification.NotificationListener
 import com.intellij.notification.NotificationType
 import com.intellij.ui.IconManager
@@ -28,13 +29,8 @@ object Notifications {
   )
 
 
-  private val notificationGroup = NotificationGroup(
-    "One Dark Theme",
-    NotificationDisplayType.BALLOON,
-    false,
-    "One Dark Theme",
-    NOTIFICATION_ICON
-  )
+  private val notificationGroup = NotificationGroupManager.getInstance()
+    .getNotificationGroup("One Dark Theme")
 
   fun displayUpdateNotification(versionNumber: String) {
     val pluginName =

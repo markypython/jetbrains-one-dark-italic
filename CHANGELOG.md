@@ -2,6 +2,8 @@
 
 #### Unreleased
 
+- Removed deprecated notification platform APIs [Non-Functional Change] [See the issue for more details](https://github.com/one-dark/jetbrains-one-dark-theme/issues/191)
+
 #### 5.1.2
 
 - Fixed a bug with the project file colors. [See the issue for more details](https://github.com/one-dark/jetbrains-one-dark-theme/issues/192)
