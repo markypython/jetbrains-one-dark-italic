@@ -46,7 +46,7 @@ class ErrorReporter : ErrorReportSubmitter() {
     events: Array<out IdeaLoggingEvent>,
     additionalInfo: String?,
     parentComponent: Component,
-    consumer: Consumer<in SubmittedReportInfo>
+    consumer: Consumer<SubmittedReportInfo>
   ): Boolean {
     return try {
       events.forEach {
@@ -103,7 +103,7 @@ class ErrorReporter : ErrorReportSubmitter() {
 
   private fun getNonBundledPlugins(): String? {
     return Arrays.stream(PluginManagerCore.getPlugins())
-      .filter { p -> !p.isBundled && p.isEnabled }
+      .filter { p ->  p.isEnabled }
       .map { p -> p.pluginId.idString }.collect(Collectors.joining(","))
   }
 

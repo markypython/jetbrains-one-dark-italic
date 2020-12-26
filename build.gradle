@@ -25,14 +25,15 @@ configurations {
 
 
 intellij {
-  version 'LATEST-EAP-SNAPSHOT'
+  version '2018.3.6'
+  type 'IU'
   alternativeIdePath  project.hasProperty("idePath") ? project.findProperty("idePath") : ""
 
   if("DEV" == System.getenv("ENV")){
     // Convenience tool for development to include other plugins
-    setPlugins(
-      'indent-rainbow.indent-rainbow:1.6'
-    )
+//    setPlugins(
+//      'indent-rainbow.indent-rainbow:1.6'
+//    )
   }
 }
 
@@ -51,7 +52,7 @@ markdownToHtml {
 }
 
 patchPluginXml {
-    sinceBuild '201.5985.32'
+    sinceBuild '182.*'
 
     def changelogPath = "$projectDir/build/html/CHANGELOG.html"
     def readmePath = "$projectDir/build/html/README.html"

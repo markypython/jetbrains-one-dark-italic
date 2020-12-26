@@ -1,12 +1,12 @@
 package com.markskelton
 
-import com.intellij.ide.plugins.PluginManagerCore
+//import com.intellij.ide.plugins.PluginManagerCore
 import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.extensions.PluginId
+//import com.intellij.openapi.extensions.PluginId
 import com.intellij.openapi.project.Project
-import com.intellij.openapi.startup.StartupManager
+//import com.intellij.openapi.startup.StartupManager
 import com.intellij.util.messages.MessageBusConnection
-import com.markskelton.notification.Notifications
+//import com.markskelton.notification.Notifications
 import com.markskelton.settings.ThemeSettings
 import java.util.*
 
@@ -28,7 +28,7 @@ object OneDarkThemeManager {
     if (!this::messageBus.isInitialized) {
       registerUser()
 
-      attemptToDisplayUpdates(project)
+//      attemptToDisplayUpdates(project)
 
       subscribeToEvents()
     }
@@ -40,20 +40,20 @@ object OneDarkThemeManager {
     }
   }
 
-  private fun attemptToDisplayUpdates(project: Project) {
-    getVersion().ifPresent { currentVersion ->
-      if (ThemeSettings.instance.version != currentVersion) {
-        ThemeSettings.instance.version = currentVersion
-        StartupManager.getInstance(project).runWhenProjectIsInitialized {
-          Notifications.displayUpdateNotification(currentVersion)
-        }
-      }
-    }
-  }
+//  private fun attemptToDisplayUpdates(project: Project) {
+//    getVersion().ifPresent { currentVersion ->
+//      if (ThemeSettings.instance.version != currentVersion) {
+//        ThemeSettings.instance.version = currentVersion
+//        StartupManager.getInstance(project).runWhenProjectIsInitialized {
+//          Notifications.displayUpdateNotification(currentVersion)
+//        }
+//      }
+//    }
+//  }
 
-  private fun getVersion(): Optional<String> =
-    PluginManagerCore.getPlugin(PluginId.getId(PLUGIN_ID)).toOptional()
-      .map { it.version }
+//  private fun getVersion(): Optional<String> =
+//    PluginManagerCore.getPlugin(PluginId.getId(PLUGIN_ID)).toOptional()
+//      .map { it.version }
 
   private fun subscribeToEvents() {
     messageBus = ApplicationManager.getApplication().messageBus.connect()
